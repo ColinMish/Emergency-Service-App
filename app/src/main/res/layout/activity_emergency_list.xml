@@ -16,8 +16,9 @@
         android:text="@string/police"
         android:id="@+id/policeButton"
         android:layout_weight="1"
-        android:textSize="30dp"
-        android:backgroundTint="#ff3842ff" />
+        android:textSize="30sp"
+        android:onClick="startLocation"
+        android:background="#ff3842ff" />
 
     <Button
         android:layout_width="fill_parent"
@@ -27,8 +28,9 @@
         android:text="@string/ambulance"
         android:id="@+id/ambulanceButton"
         android:layout_weight="1"
-        android:textSize="30dp"
-        android:backgroundTint="#ffffffff" />
+        android:textSize="30sp"
+        android:onClick="startLocation"
+        android:background="#ffffffff" />
 
     <Button
         android:layout_width="fill_parent"
@@ -38,7 +40,8 @@
         android:text="@string/fire"
         android:id="@+id/fireButton"
         android:layout_weight="1"
-        android:textSize="30dp"
-        android:backgroundTint="#ffff322f" />
+        android:onClick="startLocation"
+        android:textSize="30sp"
+        android:background="#ffff322f" />
 
 </LinearLayout>
