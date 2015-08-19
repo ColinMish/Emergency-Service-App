@@ -7,4 +7,6 @@
     <string name="ambulance">AMBULANCE</string>
     <string name="fire">FIRE</string>
     <color name="black">#000000</color>
+    <string name="title_activity_location">Location</string>
+    <string name="title_activity_situation">Situation</string>
 </resources>
