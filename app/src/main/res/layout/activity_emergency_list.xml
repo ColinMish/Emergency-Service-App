@@ -17,7 +17,7 @@
         android:id="@+id/policeButton"
         android:layout_weight="1"
         android:textSize="30sp"
-        android:onClick="startLocation"
+        android:onClick="onPoliceserviceButton"
         android:background="#ff3842ff" />
 
     <Button
@@ -29,7 +29,7 @@
         android:id="@+id/ambulanceButton"
         android:layout_weight="1"
         android:textSize="30sp"
-        android:onClick="startLocation"
+        android:onClick="onAmbulanceserviceButton"
         android:background="#ff52bf2e" />
 
     <Button
@@ -40,7 +40,7 @@
         android:text="@string/fire"
         android:id="@+id/fireButton"
         android:layout_weight="1"
-        android:onClick="startLocation"
+        android:onClick="onFireserviceButton"
         android:textSize="30sp"
         android:background="#ffff322f" />
 

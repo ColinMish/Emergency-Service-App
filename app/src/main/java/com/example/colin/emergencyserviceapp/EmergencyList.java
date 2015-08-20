@@ -9,6 +9,7 @@ import android.os.Build;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +17,7 @@ import android.support.v4.app.DialogFragment;
 
 
 public class EmergencyList extends FragmentActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +70,29 @@ public class EmergencyList extends FragmentActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void startLocation(View view){
+    public void onPoliceserviceButton(View view)
+    {
+        SMSObject.setService(1);
+        Log.i("SMSObject", "Current service set to: " + SMSObject.getService());
+        startLocation();
+    }
+
+    public void onAmbulanceserviceButton(View view)
+    {
+        SMSObject.setService(2);
+        Log.i("SMSObject", "Current service set to: " + SMSObject.getService());
+        startLocation();
+    }
+
+    public void onFireserviceButton(View view)
+    {
+        SMSObject.setService(3);
+        Log.i("SMSObject", "Current service set to: " + SMSObject.getService());
+        startLocation();
+    }
+
+    private void startLocation(){
+
         Intent intent = new Intent(this, Location.class);
         startActivity(intent);
     }

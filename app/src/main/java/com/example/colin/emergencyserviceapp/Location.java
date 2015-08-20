@@ -3,17 +3,24 @@ package com.example.colin.emergencyserviceapp;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 
 public class Location extends ActionBarActivity {
+
+    TextView locText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
+        locText = (TextView) findViewById(R.id.locationText);
+
+        Log.i("SMSObject", "Location activity received service: " + Integer.toString(SMSObject.getService()));
     }
 
     @Override
@@ -39,6 +46,10 @@ public class Location extends ActionBarActivity {
     }
 
     public void startSituation(View view) {
+
+        SMSObject.setLocation(locText.getText().toString());
+        Log.i("SMSObject", "Current location set to: " + SMSObject.getLocation());
+
         Intent intent = new Intent(this, Situation.class);
         startActivity(intent);
     }

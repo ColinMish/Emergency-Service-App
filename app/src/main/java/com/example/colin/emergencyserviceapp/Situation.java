@@ -2,19 +2,24 @@ package com.example.colin.emergencyserviceapp;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 
 public class Situation extends ActionBarActivity {
 
-    TextView prs1 = (TextView) findViewById(R.id.textSituation);
+    TextView situationText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_situation);
+        situationText = (TextView) findViewById(R.id.textSituation);
+        Log.i("SMSObject", "Situation activity received service: " + Integer.toString(SMSObject.getService()));
+        Log.i("SMSObject", "Situation activity received Location: " + (SMSObject.getLocation()));
     }
 
     @Override
@@ -39,8 +44,22 @@ public class Situation extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void onFireButton() {
+    public void onFireButton(View view) {
+        situationText.append( "fire,");
 
+    }
 
+    public void onRescueButton(View view) {
+        situationText.append( "rescue,");
+    }
+
+    public void onHazmatButton(View view) {
+        situationText.append( "hazmat,");
+    }
+
+    public void startConfirmActivity(View view)
+    {
+        SMSObject.setDescription(situationText.getText().toString());
+        Log.i("SMSObject", "Current description set to: " + SMSObject.getDescription());
     }
 }
