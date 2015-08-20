@@ -1,5 +1,6 @@
 package com.example.colin.emergencyserviceapp;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,7 +20,7 @@ public class Situation extends ActionBarActivity {
         setContentView(R.layout.activity_situation);
         situationText = (TextView) findViewById(R.id.textSituation);
         Log.i("SMSObject", "Situation activity received service: " + Integer.toString(SMSObject.getService()));
-        Log.i("SMSObject", "Situation activity received Location: " + (SMSObject.getLocation()));
+        Log.i("SMSObject", "Situation activity received location: " + (SMSObject.getLocation()));
     }
 
     @Override
@@ -61,5 +62,8 @@ public class Situation extends ActionBarActivity {
     {
         SMSObject.setDescription(situationText.getText().toString());
         Log.i("SMSObject", "Current description set to: " + SMSObject.getDescription());
+
+        Intent intent = new Intent(this, ConfirmationActivity.class);
+        startActivity(intent);
     }
 }
