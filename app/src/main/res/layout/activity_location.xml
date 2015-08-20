@@ -10,25 +10,74 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPostalAddress"
+        android:inputType="text"
         android:ems="10"
-        android:id="@+id/locationText"
+        android:id="@+id/addressLine1"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="33dp"
         android:layout_marginEnd="33dp"
         android:editable="true"
-        android:text="Enter location here" />
+        android:hint="Address" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/addressLine2"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="33dp"
+        android:layout_marginEnd="33dp"
+        android:layout_below="@+id/addressLine1"
+        android:editable="true"
+        android:hint="Address" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:id="@+id/addressLine3"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="33dp"
+        android:layout_marginEnd="200dp"
+        android:layout_below="@+id/addressLine2"
+        android:editable="true"
+        android:hint="Postcode" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Location:"
-        android:id="@+id/textLocation"
+        android:text="Address:"
+        android:id="@+id/textLocation1"
         android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/locationText"
-        android:layout_toStartOf="@+id/locationText" />
+        android:layout_toLeftOf="@+id/addressLine1"
+        android:layout_toStartOf="@+id/addressLine1" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address:"
+        android:id="@+id/textLocation2"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/addressLine2"
+        android:layout_toStartOf="@+id/addressLine2"
+        android:layout_below="@+id/textLocation1"
+        android:layout_marginTop="20dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Postcode:"
+        android:id="@+id/textLocation3"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/addressLine3"
+        android:layout_toStartOf="@+id/addressLine3"
+        android:layout_below="@+id/textLocation2"
+        android:layout_marginTop="25dp"
+        />
 
     <Button
         android:layout_width="wrap_content"
@@ -38,7 +87,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="46dp" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,7 +94,6 @@
         android:id="@+id/locationDoneButton"
         android:layout_marginBottom="37dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/locationText"
         android:onClick="startSituation"
-        android:layout_alignEnd="@+id/locationText" />
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

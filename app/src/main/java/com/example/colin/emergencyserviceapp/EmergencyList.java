@@ -93,7 +93,7 @@ public class EmergencyList extends FragmentActivity {
 
     private void startLocation(){
 
-        Intent intent = new Intent(this, Location.class);
+        Intent intent = new Intent(this, LocationActivity.class);
         startActivity(intent);
     }
 }

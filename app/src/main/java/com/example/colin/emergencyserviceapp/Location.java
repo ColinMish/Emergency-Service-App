@@ -18,7 +18,7 @@ public class Location extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
-        locText = (TextView) findViewById(R.id.locationText);
+        //locText = (TextView) findViewById(R.id.locationText);
 
         Log.i("SMSObject", "Location activity received service: " + Integer.toString(SMSObject.getService()));
     }
