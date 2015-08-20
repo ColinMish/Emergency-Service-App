@@ -24,46 +24,28 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Service Requested:"
         android:id="@+id/textServiceRequested"
-        android:layout_marginTop="66dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginStart="32dp"
+        android:layout_centerHorizontal="true"
         android:layout_below="@+id/textERequest"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Location:"
-        android:id="@+id/textView"
-        android:layout_marginTop="33dp"
-        android:layout_below="@+id/textServiceRequested"
-        android:layout_alignLeft="@+id/textServiceRequested"
-        android:layout_alignStart="@+id/textServiceRequested" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Description:"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/textView"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView"
-        android:layout_marginTop="74dp" />
-
+        android:layout_marginTop="20dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/confirmServiceText"
         android:text="Default"
-        android:layout_above="@+id/textView"
-        android:layout_toRightOf="@+id/textServiceRequested"
-        android:layout_toEndOf="@+id/textServiceRequested"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textServiceRequested"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Address:"
+        android:id="@+id/address"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/confirmServiceText"
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -71,9 +53,23 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/confirmLocationText"
         android:text="Default"
-        android:layout_below="@+id/textView"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView" />
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/address"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Description:"
+        android:id="@+id/textDescription"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/confirmLocationText"
+        android:layout_marginTop="20dp"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -81,10 +77,13 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/confirmDescriptionText"
         android:text="Default"
-        android:lines="6"
-        android:layout_below="@+id/textView2"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2" />
+        android:gravity="center"
+        android:maxLines="6"
+        android:scrollbars = "vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textDescription"
+        android:layout_marginTop="5dp"
+        />
 
     <Button
         android:layout_width="wrap_content"

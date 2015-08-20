@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,6 +30,7 @@ public class ConfirmationActivity extends ActionBarActivity {
         confirmServiceView = (TextView) findViewById(R.id.confirmServiceText);
         confirmLocationView = (TextView) findViewById(R.id.confirmLocationText);
         confirmDescriptionView = (TextView) findViewById(R.id.confirmDescriptionText);
+        confirmDescriptionView.setMovementMethod(new ScrollingMovementMethod());
     }
 
     @Override
