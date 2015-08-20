@@ -66,7 +66,9 @@ public class LocationActivity extends ActionBarActivity implements LocationListe
         SMSObject.setLocation(locText);
 
         Intent intent = new Intent(this, Situation.class);
+        intent.putExtra("Exit me", true);
         startActivity(intent);
+        finish();
     }
 
     @Override

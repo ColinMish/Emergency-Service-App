@@ -64,6 +64,8 @@ public class Situation extends ActionBarActivity {
         Log.i("SMSObject", "Current description set to: " + SMSObject.getDescription());
 
         Intent intent = new Intent(this, ConfirmationActivity.class);
+        intent.putExtra("Exit me", true);
         startActivity(intent);
+        finish();
     }
 }

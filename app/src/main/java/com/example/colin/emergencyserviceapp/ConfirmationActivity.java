@@ -1,5 +1,6 @@
 package com.example.colin.emergencyserviceapp;
 
+import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -70,9 +71,9 @@ public class ConfirmationActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void onConfirmButton(View view){
-
-        System.exit(1);
+    public void onConfirmButton(View view)
+    {
+        System.exit(0);
     }
 
 }

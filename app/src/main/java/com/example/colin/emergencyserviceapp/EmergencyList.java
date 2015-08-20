@@ -21,6 +21,10 @@ public class EmergencyList extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        /*
+        if(getIntent().getBooleanExtra("Exit me", false)){
+            finish();
+        }*/
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emergency_list);
 
@@ -95,5 +99,6 @@ public class EmergencyList extends FragmentActivity {
 
         Intent intent = new Intent(this, LocationActivity.class);
         startActivity(intent);
+        finish();
     }
 }
