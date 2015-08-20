@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Emergency Service App</string>
-
     <string name="action_settings">Settings</string>
     <string name="police">POLICE</string>
     <string name="ambulance">AMBULANCE</string>
