@@ -18,7 +18,8 @@
         android:layout_weight="1"
         android:textSize="30sp"
         android:onClick="onPoliceserviceButton"
-        android:background="#ff3842ff" />
+        android:background="#ff3842ff"
+        android:textColor="#ffffffff" />
 
     <Button
         android:layout_width="fill_parent"
@@ -30,7 +31,8 @@
         android:layout_weight="1"
         android:textSize="30sp"
         android:onClick="onAmbulanceserviceButton"
-        android:background="#ff52bf2e" />
+        android:background="#ff52bf2e"
+        android:textColor="#ffffffff" />
 
     <Button
         android:layout_width="fill_parent"
@@ -42,6 +44,7 @@
         android:layout_weight="1"
         android:onClick="onFireserviceButton"
         android:textSize="30sp"
-        android:background="#ffff322f" />
+        android:background="#ffff322f"
+        android:textColor="#ffffffff" />
 
 </LinearLayout>
