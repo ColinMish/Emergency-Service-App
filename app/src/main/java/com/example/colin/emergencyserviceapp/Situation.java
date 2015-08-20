@@ -4,9 +4,12 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class Situation extends ActionBarActivity {
+
+    TextView prs1 = (TextView) findViewById(R.id.textSituation);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,5 +37,10 @@ public class Situation extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onFireButton() {
+
+
     }
 }

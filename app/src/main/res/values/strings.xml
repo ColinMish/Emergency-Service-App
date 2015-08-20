@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Emergency Service App</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="police">POLICE</string>
     <string name="ambulance">AMBULANCE</string>
@@ -9,4 +8,8 @@
     <color name="black">#000000</color>
     <string name="title_activity_location">Location</string>
     <string name="title_activity_situation">Situation</string>
+    <string name="emergency_popup_title">Emergency Use Only</string>
+    <string name="emergency_popup_message">This app contacts your local emergency services. Tap \'Cancel\' to close the app or \'Continue\' to continue.</string>
+    <string name="ok">Continue</string>
+    <string name="cancel">Cancel</string>
 </resources>

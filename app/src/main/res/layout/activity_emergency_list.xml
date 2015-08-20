@@ -30,7 +30,7 @@
         android:layout_weight="1"
         android:textSize="30sp"
         android:onClick="startLocation"
-        android:background="#ffffffff" />
+        android:background="#ff52bf2e" />
 
     <Button
         android:layout_width="fill_parent"
