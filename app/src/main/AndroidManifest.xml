@@ -18,13 +18,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Location"
-            android:label="@string/title_activity_location" >
+            android:name=".LocationActivity"
+            android:label="LocationActivity" >
         </activity>
         <activity
             android:name=".Situation"
             android:label="@string/title_activity_situation" >
         </activity>
     </application>
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
