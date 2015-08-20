@@ -69,11 +69,6 @@ public class LocationActivity extends ActionBarActivity implements LocationListe
         startActivity(intent);
     }
 
-    public android.location.Location getLocation()
-    {
-
-        return null;
-    }
     @Override
     public void onLocationChanged(android.location.Location location)
     {
