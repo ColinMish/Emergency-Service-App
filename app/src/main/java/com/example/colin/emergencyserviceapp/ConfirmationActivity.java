@@ -77,7 +77,7 @@ public class ConfirmationActivity extends ActionBarActivity {
         try
         {
             String phoneNo = "07889246988";
-            String message = "test message :)";
+            String message = SMSObject.getService() + ", " + SMSObject.getLocation() + ", " + SMSObject.getDescription();
             SmsManager smsManager = SmsManager.getDefault();
             smsManager.sendTextMessage(phoneNo, null, message, null, null);
             System.exit(0);
