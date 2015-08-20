@@ -3,6 +3,7 @@ package com.example.colin.emergencyserviceapp;
 import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -73,7 +74,19 @@ public class ConfirmationActivity extends ActionBarActivity {
 
     public void onConfirmButton(View view)
     {
-        System.exit(0);
+        try
+        {
+            String phoneNo = "07889246988";
+            String message = "test message :)";
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage(phoneNo, null, message, null, null);
+            System.exit(0);
+        }
+        catch(Exception e)
+        {
+
+        }
+
     }
 
 }
