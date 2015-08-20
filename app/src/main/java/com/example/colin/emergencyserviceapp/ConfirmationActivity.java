@@ -34,7 +34,21 @@ public class ConfirmationActivity extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_confirmation, menu);
 
-        confirmServiceView.setText(Integer.toString(SMSObject.getService()));
+        int serviceEnum = SMSObject.getService();
+
+        if (serviceEnum == 1)
+        {
+            confirmServiceView.setText("Police");
+        }
+        else if (serviceEnum == 2)
+        {
+            confirmServiceView.setText("Ambulance");
+        }
+        if (serviceEnum == 3)
+        {
+            confirmServiceView.setText("Fire & Rescue");
+        }
+
         confirmLocationView.setText(SMSObject.getLocation());
         confirmDescriptionView.setText(SMSObject.getDescription());
 
