@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import java.io.IOException;
 import java.util.List;
@@ -18,6 +19,8 @@ import java.util.Locale;
  * Created by Dreads on 20/08/2015.
  */
 public class LocationActivity extends ActionBarActivity implements LocationListener {
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +52,19 @@ public class LocationActivity extends ActionBarActivity implements LocationListe
         return super.onOptionsItemSelected(item);
     }
 
-    public void startSituation(View view) {
+    public void startSituation(View view)
+    {
+        TextView add1 = (TextView) findViewById(R.id.addressLine1);
+        TextView add2 = (TextView) findViewById(R.id.addressLine2);
+        TextView post = (TextView) findViewById(R.id.addressLine3);
+
+        String ad1 = add1.getText().toString();
+        String ad2 = add2.getText().toString();
+        String pst = post.getText().toString();
+
+        String locText = (ad1 + ", " + ad2 + ", " + pst);
+        SMSObject.setLocation(locText);
+
         Intent intent = new Intent(this, Situation.class);
         startActivity(intent);
     }
@@ -69,19 +84,21 @@ public class LocationActivity extends ActionBarActivity implements LocationListe
             Geocoder geocoder;
             List<Address> addresses;
             geocoder = new Geocoder(this, Locale.getDefault());
-
-            addresses = geocoder.getFromLocation(latitude, longitude, 1); // Here 1 represent max location result to returned, by documents it recommended 1 to 5
-
-            String address = addresses.get(0).getAddressLine(0); // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
+            addresses = geocoder.getFromLocation(latitude, longitude, 1);
+            String address = addresses.get(0).getAddressLine(0);
             String city = addresses.get(0).getLocality();
-            String state = addresses.get(0).getAdminArea();
             String country = addresses.get(0).getCountryName();
-            String postalCode = addresses.get(0).getPostalCode();
-            String knownName = addresses.get(0).getFeatureName();
-            Log.i("Address: ", address + " " + city + " " + country + " " + postalCode + " " + knownName );
+            String postCode = addresses.get(0).getPostalCode();
+            Log.i("Address: ", address + " " + city + " " + country + " " + postCode);
+            TextView add1 = (TextView) findViewById(R.id.addressLine1);
+            TextView add2 = (TextView) findViewById(R.id.addressLine2);
+            TextView post = (TextView) findViewById(R.id.addressLine3);
+            add1.setText(address + ", " + city);
+            add2.setText(country);
+            post.setText(postCode);
         }catch(IOException e)
         {
-
+            e.printStackTrace();
         }
     }
 
