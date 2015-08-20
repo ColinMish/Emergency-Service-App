@@ -25,7 +25,7 @@ public class LocationActivity extends ActionBarActivity implements LocationListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
-
+        setTitle(R.string.location_title);
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 300, 0, this);
     }
@@ -52,23 +52,38 @@ public class LocationActivity extends ActionBarActivity implements LocationListe
         return super.onOptionsItemSelected(item);
     }
 
+    public void refreshGPS(View view)
+    {
+        finish();
+        startActivity(getIntent());
+    }
     public void startSituation(View view)
     {
+        boolean addressEntered = true;
         TextView add1 = (TextView) findViewById(R.id.addressLine1);
         TextView add2 = (TextView) findViewById(R.id.addressLine2);
         TextView post = (TextView) findViewById(R.id.addressLine3);
+        String line1 = add1.getText().toString();
+        String line2 = add2.getText().toString();
+        String line3 = post.getText().toString();
+        if ((line1.length() == 0) || (line2.length() == 0) || (line3.length() == 0))
+        {
+            addressEntered = false;
+        }
+        if(addressEntered == true)
+        {
+            String ad1 = add1.getText().toString();
+            String ad2 = add2.getText().toString();
+            String pst = post.getText().toString();
 
-        String ad1 = add1.getText().toString();
-        String ad2 = add2.getText().toString();
-        String pst = post.getText().toString();
+            String locText = (ad1 + ", " + ad2 + ", " + pst);
+            SMSObject.setLocation(locText);
 
-        String locText = (ad1 + ", " + ad2 + ", " + pst);
-        SMSObject.setLocation(locText);
-
-        Intent intent = new Intent(this, Situation.class);
-        intent.putExtra("Exit me", true);
-        startActivity(intent);
-        finish();
+            Intent intent = new Intent(this, Situation.class);
+            intent.putExtra("Exit me", true);
+            startActivity(intent);
+            finish();
+        }
     }
 
     @Override

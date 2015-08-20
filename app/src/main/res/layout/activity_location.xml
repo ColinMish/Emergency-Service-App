@@ -7,20 +7,26 @@
     android:orientation="vertical"
     tools:context="com.example.colin.emergencyserviceapp.Location"
     >
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/location_info"
+        android:id="@+id/info"
+        android:layout_marginTop="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="text"
         android:ems="10"
         android:id="@+id/addressLine1"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="33dp"
-        android:layout_marginEnd="33dp"
         android:editable="true"
-        android:hint="Address" />
+        android:hint="Address (line 1)"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/locateGPSButton"
+        android:layout_alignStart="@+id/locateGPSButton"
+        android:layout_marginTop="98dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -35,7 +41,7 @@
         android:layout_marginEnd="33dp"
         android:layout_below="@+id/addressLine1"
         android:editable="true"
-        android:hint="Address" />
+        android:hint="Address (line 2)" />
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -53,21 +59,21 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Address:"
+        android:text="Address (line 1):"
         android:id="@+id/textLocation1"
-        android:layout_centerVertical="true"
         android:layout_toLeftOf="@+id/addressLine1"
-        android:layout_toStartOf="@+id/addressLine1" />
+        android:layout_toStartOf="@+id/addressLine1"
+        android:layout_marginTop="115dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Address:"
+        android:text="Address (line 2):"
         android:id="@+id/textLocation2"
         android:layout_centerVertical="true"
         android:layout_toLeftOf="@+id/addressLine2"
         android:layout_toStartOf="@+id/addressLine2"
         android:layout_below="@+id/textLocation1"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="25dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -83,17 +89,18 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Use GPS To Find Position"
+        android:text="Refresh GPS"
         android:id="@+id/locateGPSButton"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/addressLine3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="46dp" />
+        android:onClick="refreshGPS"
+        android:layout_marginTop="40dp"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Done"
         android:id="@+id/locationDoneButton"
-        android:layout_marginBottom="37dp"
+        android:layout_marginBottom="60dp"
         android:layout_alignParentBottom="true"
         android:onClick="startSituation"
         android:layout_centerHorizontal="true" />

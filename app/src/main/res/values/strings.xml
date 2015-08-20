@@ -13,6 +13,8 @@
     <string name="ok">Continue</string>
     <string name="cancel">Cancel</string>
     <string name="title_activity_confirmation">ConfirmationActivity</string>
-
+    <string name="location_info">We will now estimate your location, please correct any errors</string>
     <string name="hello_world">Hello world!</string>
+    <string name="location_title">Location</string>
+    <string name="confirmation_title">Confirmation</string>
 </resources>

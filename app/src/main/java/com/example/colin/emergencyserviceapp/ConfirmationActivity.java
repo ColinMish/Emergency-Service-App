@@ -21,7 +21,7 @@ public class ConfirmationActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmation);
-
+        setTitle(R.string.confirmation_title);
         Log.i("SMSObject", "Confirmation activity received service: " + Integer.toString(SMSObject.getService()));
         Log.i("SMSObject", "Confirmation activity received location: " + (SMSObject.getLocation()));
         Log.i("SMSObject", "Confirmation activity received description: " + (SMSObject.getDescription()));

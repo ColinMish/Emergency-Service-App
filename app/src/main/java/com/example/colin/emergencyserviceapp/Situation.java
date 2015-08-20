@@ -60,12 +60,20 @@ public class Situation extends ActionBarActivity {
 
     public void startConfirmActivity(View view)
     {
-        SMSObject.setDescription(situationText.getText().toString());
-        Log.i("SMSObject", "Current description set to: " + SMSObject.getDescription());
+        boolean situEntered = true;
+        String situText = situationText.getText().toString();
+        if(situText.length() == 0)
+        {
+            situEntered = false;
+        }
+        if(situEntered == true) {
+            SMSObject.setDescription(situText);
+            Log.i("SMSObject", "Current description set to: " + SMSObject.getDescription());
 
-        Intent intent = new Intent(this, ConfirmationActivity.class);
-        intent.putExtra("Exit me", true);
-        startActivity(intent);
-        finish();
+            Intent intent = new Intent(this, ConfirmationActivity.class);
+            intent.putExtra("Exit me", true);
+            startActivity(intent);
+            finish();
+        }
     }
 }
