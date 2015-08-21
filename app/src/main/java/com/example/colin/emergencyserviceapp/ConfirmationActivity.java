@@ -19,6 +19,8 @@ public class ConfirmationActivity extends ActionBarActivity
     TextView confirmServiceView;
     TextView confirmLocationView;
     TextView confirmDescriptionView;
+    String serviceString;
+
     private AlertDialog.Builder builder;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -27,6 +29,21 @@ public class ConfirmationActivity extends ActionBarActivity
         setContentView(R.layout.activity_confirmation);
         setTitle(R.string.confirmation_title);
 
+        int serviceEnum = SMSObject.getService();
+
+        if (serviceEnum == 1)
+        {
+            serviceString = "Police";
+        }
+        else if (serviceEnum == 2)
+        {
+            serviceString = "Ambulance";
+        }
+        else if (serviceEnum == 3)
+        {
+            serviceString = "Fire & Rescue";
+        }
+
         builder = new AlertDialog.Builder(ConfirmationActivity.this);
         builder.setTitle("Final Confirmation");
         builder.setMessage("Your Emergency Service Request will now be sent. We will send you a confirmation message once we receive your request, please allow up to 1 minute for a response.");
@@ -34,7 +51,7 @@ public class ConfirmationActivity extends ActionBarActivity
             public void onClick(DialogInterface dialog, int id) {
                 try {
                     final String phoneNo = "07901550734";
-                    final String message = SMSObject.getService() + ", " + SMSObject.getLocation() + ", " + SMSObject.getDescription();
+                    final String message = serviceString + ", " + SMSObject.getLocation() + ", " + SMSObject.getDescription();
                     SmsManager smsManager = SmsManager.getDefault();
                     smsManager.sendTextMessage(phoneNo, null, message, null, null);
                     System.exit(0);
@@ -73,7 +90,7 @@ public class ConfirmationActivity extends ActionBarActivity
         {
             confirmServiceView.setText("Ambulance");
         }
-        if (serviceEnum == 3)
+        else if (serviceEnum == 3)
         {
             confirmServiceView.setText("Fire & Rescue");
         }
