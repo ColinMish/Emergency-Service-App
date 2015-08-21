@@ -5,6 +5,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:orientation="vertical"
+    android:screenOrientation="portrait"
     tools:context="com.example.colin.emergencyserviceapp.Situation"
     >
 
@@ -12,20 +13,18 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fire"
+        android:text="House fire"
         android:id="@+id/fireButton"
+        android:onClick="onFireButton"
         android:layout_alignTop="@+id/rescueButton"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="45dp"
-        android:onClick="onFireButton"
-        android:layout_marginStart="45dp" />
+        android:layout_alignParentStart="true" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rescue"
+        android:text="Car crash"
         android:id="@+id/rescueButton"
         android:layout_marginTop="38dp"
         android:layout_below="@+id/textSituation"
@@ -65,21 +64,92 @@
         android:layout_height="wrap_content"
         android:text="Done"
         android:id="@+id/DoneButton"
+        android:onClick="startConfirmActivity"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/textSituation"
         android:layout_alignEnd="@+id/textSituation"
-        android:layout_marginRight="37dp"
-        android:onClick="startConfirmActivity"
-        android:layout_marginEnd="37dp"
-        android:layout_marginBottom="29dp" />
+        android:layout_alignLeft="@+id/UnconsciousButton"
+        android:layout_alignStart="@+id/UnconsciousButton"
+        android:background="#ffacb8ff" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Tap buttons to add to description"
+        android:text="Tap pre-written phrases to quickly add to your description"
         android:id="@+id/textSituationInstructions"
         android:layout_above="@+id/fireButton"
         android:layout_alignLeft="@+id/fireButton"
         android:layout_alignStart="@+id/fireButton" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/speechButton"
+        android:src="@android:drawable/ic_btn_speak_now"
+        android:onClick="onSpeechButton"
+        android:layout_alignTop="@+id/nUnconsciousButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/rescueButton"
+        android:layout_toLeftOf="@+id/rescueButton"
+        android:background="#ffacb8ff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Describe your emergency situation as best as you can"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/textSituation"
+        android:layout_alignEnd="@+id/textSituation" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Assault"
+        android:id="@+id/assaultButton"
+        android:onClick="onAssaultButton"
+        android:layout_below="@+id/hazmatButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Public disturbance"
+        android:id="@+id/disturbanceButton"
+        android:onClick="onDisturbanceButton"
+        android:layout_alignBottom="@+id/assaultButton"
+        android:layout_toRightOf="@+id/assaultButton"
+        android:layout_toEndOf="@+id/assaultButton" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unconscious &amp; breathing"
+        android:id="@+id/UnconsciousButton"
+        android:onClick="onUnconsciousButton"
+        android:layout_below="@+id/rescueButton"
+        android:layout_toRightOf="@+id/disturbanceButton"
+        android:layout_toEndOf="@+id/disturbanceButton"
+        android:layout_above="@+id/DoneButton"
+        android:textSize="10dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unconscious &amp; not breathing"
+        android:id="@+id/nUnconsciousButton"
+        android:onClick="onNUnconsciousButton"
+        android:layout_below="@+id/disturbanceButton"
+        android:layout_alignRight="@+id/disturbanceButton"
+        android:layout_alignEnd="@+id/disturbanceButton"
+        android:layout_toRightOf="@+id/speechButton"
+        android:layout_toEndOf="@+id/speechButton" />
 </RelativeLayout>
