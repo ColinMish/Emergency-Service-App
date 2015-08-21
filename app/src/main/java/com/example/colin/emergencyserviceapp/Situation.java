@@ -68,6 +68,22 @@ public class Situation extends ActionBarActivity {
         situationText.append("Hazmat ");
     }
 
+    public void onAssaultButton(View view) {
+        situationText.append("Assault ");
+    }
+
+    public void onDisturbanceButton(View view) {
+        situationText.append("Public disturbance ");
+    }
+
+    public void onUnconsciousButton(View view) {
+        situationText.append("Unconscious & breathing ");
+    }
+
+    public void onNUnconsciousButton(View view) {
+        situationText.append("Unconscious & not breathing ");
+    }
+
     public void startConfirmActivity(View view)
     {
         boolean situEntered = true;
