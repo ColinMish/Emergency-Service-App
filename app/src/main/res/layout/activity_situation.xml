@@ -12,20 +12,18 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fire"
+        android:text="House fire"
         android:id="@+id/fireButton"
+        android:onClick="onFireButton"
         android:layout_alignTop="@+id/rescueButton"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="45dp"
-        android:onClick="onFireButton"
-        android:layout_marginStart="45dp" />
+        android:layout_alignParentStart="true" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rescue"
+        android:text="Car crash"
         android:id="@+id/rescueButton"
         android:layout_marginTop="38dp"
         android:layout_below="@+id/textSituation"
@@ -77,9 +75,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Tap buttons to add to description"
+        android:text="Tap pre-written phrases to quickly add to your description"
         android:id="@+id/textSituationInstructions"
         android:layout_above="@+id/fireButton"
         android:layout_alignLeft="@+id/fireButton"
         android:layout_alignStart="@+id/fireButton" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/speechButton"
+        android:src="@android:drawable/ic_btn_speak_now"
+        android:layout_alignTop="@+id/DoneButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="onSpeechButton"
+        android:layout_toLeftOf="@+id/hazmatButton"
+        android:layout_toStartOf="@+id/hazmatButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Describe your emergency situation as best as you can"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/textSituation"
+        android:layout_alignEnd="@+id/textSituation" />
 </RelativeLayout>
