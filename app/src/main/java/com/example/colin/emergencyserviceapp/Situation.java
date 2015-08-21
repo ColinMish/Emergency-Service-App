@@ -2,6 +2,7 @@ package com.example.colin.emergencyserviceapp;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.speech.RecognizerIntent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -28,6 +29,8 @@ public class Situation extends ActionBarActivity {
         situationText = (TextView) findViewById(R.id.textSituation);
         Log.i("SMSObject", "Situation activity received service: " + Integer.toString(SMSObject.getService()));
         Log.i("SMSObject", "Situation activity received location: " + (SMSObject.getLocation()));
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
     }
 
     @Override
@@ -53,16 +56,16 @@ public class Situation extends ActionBarActivity {
     }
 
     public void onFireButton(View view) {
-        situationText.append("House fire,");
+        situationText.append("House fire ");
 
     }
 
     public void onRescueButton(View view) {
-        situationText.append("Car accident,");
+        situationText.append("Car accident ");
     }
 
     public void onHazmatButton(View view) {
-        situationText.append("Hazmat,");
+        situationText.append("Hazmat ");
     }
 
     public void startConfirmActivity(View view)
@@ -115,7 +118,7 @@ public class Situation extends ActionBarActivity {
 
                     ArrayList<String> result = data
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    situationText.append(result.get(0) + ",");
+                    situationText.append(result.get(0) + " ");
                 }
                 break;
             }

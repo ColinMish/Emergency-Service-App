@@ -2,6 +2,7 @@ package com.example.colin.emergencyserviceapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.location.*;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -26,6 +27,8 @@ public class LocationActivity extends ActionBarActivity implements LocationListe
         setTitle(R.string.location_title);
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 300, 0, this);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu)

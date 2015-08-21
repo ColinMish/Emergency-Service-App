@@ -8,7 +8,7 @@
     <string name="title_activity_location">Location</string>
     <string name="title_activity_situation">Situation</string>
     <string name="emergency_popup_title">Emergency Use Only</string>
-    <string name="emergency_popup_message">Warning! This app contacts your local Emergency Services. Misuse of this app could result in prosecution. Press \'Cancel\' to close the app or press \'Continue\' to proceed.</string>
+    <string name="emergency_popup_message">Warning! This app contacts your local Emergency Services. Misuse of this app could result in prosecution.</string>
     <string name="ok">Continue</string>
     <string name="cancel">Cancel</string>
     <string name="title_activity_confirmation">ConfirmationActivity</string>

@@ -1,5 +1,6 @@
 package com.example.colin.emergencyserviceapp;
 
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
@@ -29,6 +30,8 @@ public class ConfirmationActivity extends ActionBarActivity
         confirmLocationView = (TextView) findViewById(R.id.confirmLocationText);
         confirmDescriptionView = (TextView) findViewById(R.id.confirmDescriptionText);
         confirmDescriptionView.setMovementMethod(new ScrollingMovementMethod());
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
