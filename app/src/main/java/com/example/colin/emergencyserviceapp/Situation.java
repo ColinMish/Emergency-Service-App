@@ -66,7 +66,7 @@ public class Situation extends ActionBarActivity {
         {
             situEntered = false;
         }
-        if(situEntered == true) {
+        if(situEntered) {
             SMSObject.setDescription(situText);
             Log.i("SMSObject", "Current description set to: " + SMSObject.getDescription());
 
