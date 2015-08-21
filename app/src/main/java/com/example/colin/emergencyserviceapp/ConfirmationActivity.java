@@ -1,5 +1,7 @@
 package com.example.colin.emergencyserviceapp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -17,12 +19,36 @@ public class ConfirmationActivity extends ActionBarActivity
     TextView confirmServiceView;
     TextView confirmLocationView;
     TextView confirmDescriptionView;
+    private AlertDialog.Builder builder;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmation);
         setTitle(R.string.confirmation_title);
+
+        builder = new AlertDialog.Builder(ConfirmationActivity.this);
+        builder.setTitle("Final Confirmation");
+        builder.setMessage("Your Emergency Service Request will now be sent. We will send you a confirmation message once we receive your request, please allow up to 1 minute for a response.");
+        builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                try {
+                    final String phoneNo = "07901550734";
+                    final String message = SMSObject.getService() + ", " + SMSObject.getLocation() + ", " + SMSObject.getDescription();
+                    SmsManager smsManager = SmsManager.getDefault();
+                    smsManager.sendTextMessage(phoneNo, null, message, null, null);
+                    System.exit(0);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                System.exit(0);
+            }
+        });
+
         Log.i("SMSObject", "Confirmation activity received service: " + Integer.toString(SMSObject.getService()));
         Log.i("SMSObject", "Confirmation activity received location: " + (SMSObject.getLocation()));
         Log.i("SMSObject", "Confirmation activity received description: " + (SMSObject.getDescription()));
@@ -71,17 +97,6 @@ public class ConfirmationActivity extends ActionBarActivity
     }
     public void onConfirmButton(View view)
     {
-        try
-        {
-            String phoneNo = "07889246988";
-            String message = SMSObject.getService() + ", " + SMSObject.getLocation() + ", " + SMSObject.getDescription();
-            SmsManager smsManager = SmsManager.getDefault();
-            smsManager.sendTextMessage(phoneNo, null, message, null, null);
-            System.exit(0);
-        }
-        catch(Exception e)
-        {
-            e.printStackTrace();
-        }
+        builder.show();
     }
 }
